@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Request</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair Display&family=Playfair Display SC" rel="stylesheet">  </head>
+
+<!--NAVIGATION BAR-->
+    <div class="navigation_bar">
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="C_Look.html">Catalog</a>
+            <a class="active" href="Request.html">Request</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="subscribe.html">Subscribe</a>
+        </div>
+    </div>
+  
+  <body style="background-color: #bfa0c0;">
+
+  <div class="Request_container">
+
+    <div class="Header"><h2><b>Submit a Request</b></h2></div>
+
+    <script type = "text/javascript">
+      function fn2(){
+
+        var f_name = document.getElementById("f_name").value;
+        var f_namelength = f_name.length;
+        
+            while(f_namelength == 0){
+                f_name = window.prompt("Enter your first name");
+                f_namelength = f_name.length;
+            }
+          
+        var l_name = document.getElementById("l_name").value;
+        var l_namelength = l_name.length;
+
+            while(l_namelength == 0){
+                l_name = window.prompt("Enter your last name");
+                l_namelength = l_name.length;
+            }
+
+        var subject1 = document.getElementById("subject").value;
+        var subjectlength = subject1.length;
+
+            while(subjectlength == 0){
+                subjectname = window.prompt("Enter your request");
+                subjectlength = subjectnames.length;
+            }
+        
+        window.alert("You have successfully sent a request to the Spring Canvas Team.");
+        window.location.href = "request.html";
+      }
+    </script>
+
+
+    <form action="Request.html">
+  
+      <label for="f_name">First Name</label>
+      <input type="text" id="f_name" name="firstname" placeholder="Your name..">
+      <br>
+      <br>
+      <label for="l_name">Last Name</label>
+      <input type="text" id="l_name" name="lastname" placeholder="Your last name..">
+      <br>
+      <br>
+      <label for="subject">Your request</label>
+      <textarea id="subject" name="subject" placeholder="Let us know what else you'd like to see on Spring Canvas" style="height:200px"></textarea>
+      <br>
+      <br>
+      <button onclick="fn2()" type="submit">Send Request</button>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script> 
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBimmJTuTa-l--RMrrh9fGB6w68XbgzsjI",
+    authDomain: "spring-canvas-e2744.firebaseapp.com",
+    projectId: "spring-canvas-e2744",
+    databaseURL:"https://spring-canvas-e2744-default-rtdb.firebaseio.com/",
+    storageBucket: "spring-canvas-e2744.appspot.com",
+    messagingSenderId: "770859051491",
+    appId: "1:770859051491:web:794b5faf2ba5ecc19958d6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database(); 
+</script>
+<script src="login.js"></script>
+  
+    </form>
+  </div>
+  </body>
